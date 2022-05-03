@@ -42,7 +42,7 @@
 <img src="screenshot.png"
          alt="Screenshot">
 
-I just made this so I don't have to search for songs for my friends. 
+I don't know why I made this.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -53,6 +53,7 @@ I just made this so I don't have to search for songs for my friends.
 * [discord.js](https://discord.js.org/)
 * [/Create](https://www.npmjs.com/package/slash-create)
 * [uwuifier](https://www.npmjs.com/package/@patarapolw/uwuifier)
+* [statcord.js](https://statcord.com)
 
 
 
@@ -67,6 +68,7 @@ See Discord's <a href="https://support.discord.com/hc/en-us/articles/15000003685
 
 ## Roadmap
 
+- [] Bot Icon
 - [] Consolidate all options into one command
 - [] Think of a funny status for the bot
 - [] More options
