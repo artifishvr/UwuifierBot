@@ -3,7 +3,7 @@
     "version": "1.0.2",
     "description": "Discord bot that uses the Uwuifier API to uwuify messages",
     "main": "index.js",
-    "repository": "https://github.com/artificialbutter/uwuifier-bot",
+    "repository": "https://github.com/artificialbutter/Uwuifier-Discord-Bot",
     "author": "ArtificialButter",
     "license": "GPL",
     "scripts": {
