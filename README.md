@@ -3,12 +3,15 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+  <a href="https://github.com/artificialbutter/Uwuifier-Discord-Bot">
+    <img src="icon.png" alt="Icon" width="80" height="80">
+  </a>
 
   <h3 align="center">Uwuifier Bot</h3>
   <img src='https://img.shields.io/github/license/artificialbutter/Uwuifier-Discord-Bot?style=flat-square'>
 
   <p align="center">
-    <a href=""><strong>Invite the bot! »</strong></a>
+    <a href="https://discord.com/api/oauth2/authorize?client_id=969743347138822174&permissions=2147801152&scope=bot%20applications.commands"><strong>Invite the bot! »</strong></a>
     <br />
     <a href="https://github.com/artificialbutter/Uwuifier-Discord-Bot/issues">Report Bug</a>
   </p>
