@@ -28,7 +28,7 @@ module.exports = class extends SlashCommand {
          
         // send to statcord
         const { statcord } = require('..');
-        statcord.postCommand("Uwuify", ctx.user.id);
+        statcord.postCommand("Uwuify Spaces", ctx.user.id);
 
 
 
