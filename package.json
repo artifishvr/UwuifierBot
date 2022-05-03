@@ -1,6 +1,6 @@
 {
     "name": "uwuifier-bot",
-    "version": "0.1.0",
+    "version": "0.1.6",
     "description": "Discord bot that uses the Uwuifier API to uwuify messages",
     "main": "index.js",
     "repository": "https://github.com/artificialbutter/uwuifier-bot",
