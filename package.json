@@ -1,0 +1,19 @@
+{
+    "name": "uwuifier-bot",
+    "version": "0.1.0",
+    "description": "Discord bot that uses the Uwuifier API to uwuify messages",
+    "main": "index.js",
+    "repository": "https://github.com/artificialbutter/uwuifier-bot",
+    "author": "ArtificialButter",
+    "license": "GPL",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@patarapolw/uwuifier": "^2.0.4",
+        "discord.js": "^13.1.0",
+        "dotenv": "^16.0.0",
+        "slash-create": "^5.0.0",
+        "statcord.js": "^3.4.2"
+    }
+}
