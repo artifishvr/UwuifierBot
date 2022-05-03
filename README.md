@@ -67,7 +67,9 @@ See Discord's <a href="https://support.discord.com/hc/en-us/articles/15000003685
 
 ## Roadmap
 
-- [] Use API with >300 calls
+- [] Consolidate all options into one command
+- [] Think of a funny status for the bot
+- [] More options
 
 
 <!-- CONTRIBUTING -->
