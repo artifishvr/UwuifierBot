@@ -45,7 +45,14 @@
 <img src="screenshot.png"
          alt="Screenshot">
 
-I don't know why I made this.
+The Uwuifier discord bot is a easy way to "Uwuify" your messages in discord.
+Have you ever used uwuifier.com? This bot works just like it!
+If not, here's what it does
+It first adds s-s-stutters to the sentence you give it, then adds random w's to the sentence, and finally adds faces and text like x3 *boops nose*.
+
+All that results in this:
+Have you evew *sweats* used uwuifiew.com?!?! This bot wowks just *blushes* wike *whispers to self* it!?
+If nyot, hewe's what i-it does It fiwst adds s-s-stuttews t-to the x3 sentence you give it, then adds wandom w's *sweats* t-to the x3 sentence, and finyawwy adds faces and text wike *whispers to self* x3 *boops nyose*.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
