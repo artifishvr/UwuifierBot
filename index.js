@@ -26,15 +26,15 @@ const creator = new SlashCreator({
   });
 
 client.on("ready", () => {
-  /* client.user.setActivity("furry porn", {
+  client.user.setActivity("/uwuify", {
     type: "WATCHING",
   });
   setInterval(() => {
-    client.user.setActivity("furry porn", {
+    client.user.setActivity("/uwuify", {
       type: "WATCHING",
     });
   }, 3600000);
-*/
+
   console.log(`Logging in as ${client.user.tag}`);
 
   console.log("Ready!");
