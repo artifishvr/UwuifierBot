@@ -78,10 +78,11 @@ See Discord's <a href="https://support.discord.com/hc/en-us/articles/15000003685
 
 ## Roadmap
 
-- [] Bot Icon
+- [] Send message >2000 characters as a text file
 - [] Consolidate all options into one command
-- [] Think of a funny status for the bot
 - [] More options
+- [X] Bot Icon
+- [X] Think of a status for the bot
 
 
 <!-- CONTRIBUTING -->
