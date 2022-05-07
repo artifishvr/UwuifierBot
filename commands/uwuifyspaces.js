@@ -23,16 +23,19 @@ module.exports = class extends SlashCommand {
     try {
         const uwuifier = new Uwuifier();
         const text = ctx.options.text;
+        const uwuifiedtext = uwuifier.uwuifySpaces(text);
 
         await ctx.defer();
          
         // send to statcord
         const { statcord } = require('..');
         statcord.postCommand("Uwuify Spaces", ctx.user.id);
-
-
-
-        ctx.sendFollowUp({ content: uwuifier.uwuifySpaces(text) });
+  
+        if (uwuifiedtext.length <= 2000) {
+          ctx.sendFollowUp({ content: uwuifiedtext });
+        } else {
+          ctx.sendFollowUp({ content: "That text was too long to uwuify." });
+        }      
     } catch (error) {
         console.error(error);
     }}

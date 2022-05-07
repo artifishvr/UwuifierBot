@@ -23,6 +23,7 @@ module.exports = class extends SlashCommand {
     try {
         const uwuifier = new Uwuifier();
         const text = ctx.options.text;
+        const uwuifiedtext = uwuifier.uwuifyWords(text);
 
         await ctx.defer();
          
@@ -30,9 +31,11 @@ module.exports = class extends SlashCommand {
         const { statcord } = require('..');
         statcord.postCommand("Uwuify Words", ctx.user.id);
 
-
-
-        ctx.sendFollowUp({ content: uwuifier.uwuifyWords(text) });
+        if (uwuifiedtext.length <= 2000) {
+          ctx.sendFollowUp({ content: uwuifiedtext });
+        } else {
+          ctx.sendFollowUp({ content: "That text was too long to uwuify." });
+        }
     } catch (error) {
         console.error(error);
     }}
