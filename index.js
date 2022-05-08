@@ -26,11 +26,11 @@ const creator = new SlashCreator({
   });
 
 client.on("ready", () => {
-  client.user.setActivity("/uwuify", {
+  client.user.setActivity("-... --- -   ... - .- - ..- ...", {
     type: "WATCHING",
   });
   setInterval(() => {
-    client.user.setActivity("/uwuify", {
+    client.user.setActivity("-... --- -   ... - .- - ..- ...", {
       type: "WATCHING",
     });
   }, 3600000);
