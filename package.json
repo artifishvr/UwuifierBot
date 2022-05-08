@@ -1,9 +1,9 @@
 {
-    "name": "uwuifier-bot",
-    "version": "1.1.0",
-    "description": "Discord bot that uses the Uwuifier API to uwuify messages",
+    "name": "textfun",
+    "version": "1.1.2",
+    "description": "The discord bot to make your messages worse.",
     "main": "index.js",
-    "repository": "https://github.com/artificialbutter/Uwuifier-Discord-Bot",
+    "repository": "https://github.com/artificialbutter/TextFun",
     "author": "ArtificialButter",
     "license": "GPL",
     "scripts": {
