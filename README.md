@@ -63,6 +63,7 @@ If nyot, hewe's what i-it does It fiwst adds s-s-stuttews t-to the x3 sentence y
 * [discord.js](https://discord.js.org/)
 * [/Create](https://www.npmjs.com/package/slash-create)
 * [uwuifier](https://www.npmjs.com/package/@patarapolw/uwuifier)
+* [replace-word](https://www.npmjs.com/package/replace-word)
 * [statcord.js](https://statcord.com)
 
 
