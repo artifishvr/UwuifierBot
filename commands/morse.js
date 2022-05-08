@@ -4,7 +4,7 @@ const replaceWord = require('replace-word');
 module.exports = class extends SlashCommand {
     constructor(creator) {
         super(creator, {
-            name: 'morsecode',
+            name: 'morse',
             description: 'Converts text to morse code',
             options: [
                 {
