@@ -21,7 +21,7 @@ module.exports = class extends SlashCommand {
 
     async run (ctx) {
     try {
-        const uwuifier = new Uwuifier();
+        const uwuifier = new Uwuifier(); // create new uwuifier instance
         const text = ctx.options.text;
         const uwuifiedtext = uwuifier.uwuifyWords(text);
 
@@ -31,10 +31,10 @@ module.exports = class extends SlashCommand {
         const { statcord } = require('..');
         statcord.postCommand("Uwuify Words", ctx.user.id);
 
-        if (uwuifiedtext.length <= 2000) {
-          ctx.sendFollowUp({ content: uwuifiedtext });
+        if (uwuifiedtext.length <= 2000) { // if uwuified text is too long to send in discord
+          ctx.sendFollowUp({ content: uwuifiedtext });  // send uwuified text if it isn't too long
         } else {
-          ctx.sendFollowUp({ content: "That text was too long to uwuify." });
+          ctx.sendFollowUp({ content: "That text was too long to uwuify." });  // send error message if it is too long
         }
     } catch (error) {
         console.error(error);

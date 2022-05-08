@@ -25,12 +25,12 @@ const creator = new SlashCreator({
     client
   });
 
-client.on("ready", () => {
-  client.user.setActivity("-... --- -   ... - .- - ..- ...", {
+client.on("ready", () => { // when bot client is ready 
+  client.user.setActivity("-... --- -   ... - .- - ..- ...", { // set bot activity
     type: "WATCHING",
   });
-  setInterval(() => {
-    client.user.setActivity("-... --- -   ... - .- - ..- ...", {
+  setInterval(() => { 
+    client.user.setActivity("-... --- -   ... - .- - ..- ...", { // set bot activity again later to fix discord weirdness
       type: "WATCHING",
     });
   }, 3600000);

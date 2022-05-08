@@ -30,10 +30,10 @@ module.exports = class extends SlashCommand {
         const { statcord } = require('..');
         statcord.postCommand("Morse", ctx.user.id);
 
-        if (convertedtext.length <= 2000) {
-          ctx.sendFollowUp({ content: convertedtext });
+        if (convertedtext.length <= 2000) { // if converted text is too long to send in discord
+          ctx.sendFollowUp({ content: convertedtext }); // send converted text if it isn't too long
         } else {
-          ctx.sendFollowUp({ content: "That text was too long to convert." });
+          ctx.sendFollowUp({ content: "That text was too long to convert." }); // send error message if it is too long
         }
     } catch (error) {
         console.error(error);
