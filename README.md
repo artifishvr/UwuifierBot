@@ -7,7 +7,7 @@
     <img src="icon.png" alt="Icon" width="80" height="80">
   </a>
 
-  <h3 align="center">Uwuifier Bot</h3>
+  <h3 align="center">TextFun</h3>
   <img src='https://img.shields.io/github/license/artificialbutter/Uwuifier-Discord-Bot?style=flat-square'>
 
   <p align="center">
@@ -45,14 +45,18 @@
 <img src="screenshot.png"
          alt="Screenshot">
 
-The Uwuifier discord bot is a easy way to "Uwuify" your messages in discord.
-Have you ever used uwuifier.com? This bot works just like it!
-If not, here's what it does
-It first adds s-s-stutters to the sentence you give it, then adds random w's to the sentence, and finally adds faces and text like x3 *boops nose*.
+The TextFun discord bot is a easy way to mess around with text in discord.
+You can uwuify text, turn it into a emojipasta, or even convert it to morse code. (with more coming soon)
 
-All that results in this:
-Have you evew *sweats* used uwuifiew.com?!?! This bot wowks just *blushes* wike *whispers to self* it!?
-If nyot, hewe's what i-it does It fiwst adds s-s-stuttews t-to the x3 sentence you give it, then adds wandom w's *sweats* t-to the x3 sentence, and finyawwy adds faces and text wike *whispers to self* x3 *boops nyose*.
+So that looks like this:
+This bot 🤖 allows you 😽🤲 to mess 😏 around 💞 with text 😱📲 in 🏽 multiple different 🚿🛀🧖🏼‍♀️🙆🏼‍♀️🤸🏻‍♀️💅 ways. 💫 This test ✍️📖📑 sentence 📜 demonstrates the capabilities of the TextFun bot. 🤖
+This bot a-a-awwows you t-to mess awound with text in muwtipwe diffewent ways. This test sentence demonstwates the x3 capabiwities of the x3 T-TextFun bot. boops your nose
+- .... .. ...   -... --- -   .- -.- -.- --- .-- ...   -.-- --- ..-   - ---   -- . ... ...   .- .-. --- ..- -- -..   .-- .. - ....   - . -..- -   .. --   -- ..- -.- - .. .--. -.- .   -.. .. ..-. ..-. . .-. . -- -   .-- .- -.-- ... .-.-.-   - .... .. ...   - . ... -   ... . -- - . -- -.-. .   -.. . -- --- -- ... - .-. .- - . ...   - .... .   -.-. .- .--. .- -... .. -.- .. - .. . ...   --- ..-.   - .... .   - . -..- - ..-. ..- --   -... --- - .-.-.-
+
+
+The bot uses Discord Slash Commands, so you can find the command list in your discord client. (See Discord's <a href="https://support.discord.com/hc/en-us/articles/1500000368501-Slash-Commands-FAQ">Slash Command FAQ</a> for more info)
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
