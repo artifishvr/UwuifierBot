@@ -1,6 +1,6 @@
 {
     "name": "textfun",
-    "version": "1.2.3",
+    "version": "1.3.0",
     "description": "The discord bot to make your messages worse.",
     "main": "index.js",
     "repository": "https://github.com/artificialbutter/TextFun",
