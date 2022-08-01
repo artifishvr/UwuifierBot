@@ -12,9 +12,9 @@
     "dependencies": {
         "@patarapolw/uwuifier": "^2.0.4",
         "discord.js": "^13.1.0",
-        "dotenv": "^16.0.0",
+        "dotenv": "^16.0.1",
         "replace-word": "^1.0.4",
-        "slash-create": "^5.0.0",
+        "slash-create": "^5.7.1",
         "statcord.js": "^3.4.2"
     }
 }
