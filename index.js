@@ -1,13 +1,13 @@
 const dotenv = require("dotenv");
 const path = require("path");
 const { SlashCreator, GatewayServer } = require("slash-create");
-const { Client } = require("discord.js");
+const { Client, GatewayIntentBits, ActivityType } = require("discord.js");
 const Statcord = require("statcord.js");
 
 dotenv.config();
 
 const client = new Client({
-  intents: ["GUILDS", "GUILD_MESSAGES"],
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
 });
 
 const statcord = new Statcord.Client({
@@ -26,12 +26,12 @@ const creator = new SlashCreator({
   });
 
 client.on("ready", () => { // when bot client is ready 
-  client.user.setActivity("-... --- -   ... - .- - ..- ...", { // set bot activity
-    type: "WATCHING",
+  client.user.setActivity("hewwo", { // set bot activity
+    type: ActivityType.Watching,
   });
   setInterval(() => { 
-    client.user.setActivity("-... --- -   ... - .- - ..- ...", { // set bot activity again later to fix discord weirdness
-      type: "WATCHING",
+    client.user.setActivity("hewwo", { // set bot activity again later to fix discord weirdness
+      type: ActivityType.Watching,
     });
   }, 3600000);
 
