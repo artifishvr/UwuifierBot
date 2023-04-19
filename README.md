@@ -3,17 +3,17 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/artificialbutter/Uwuifier-Discord-Bot">
+  <a href="https://github.com/artificialbutter/UwuifierBot">
     <img src="icon.png" alt="Icon" width="80" height="80">
   </a>
 
-  <h3 align="center">TextFun</h3>
+  <h3 align="center">Uwuifier</h3>
   <img src='https://img.shields.io/github/license/artificialbutter/Uwuifier-Discord-Bot?style=flat-square'>
 
   <p align="center">
     <a href="https://discord.com/api/oauth2/authorize?client_id=969743347138822174&permissions=2147801152&scope=bot%20applications.commands"><strong>Invite the bot! »</strong></a>
     <br />
-    <a href="https://github.com/artificialbutter/Uwuifier-Discord-Bot/issues">Report Bug</a>
+    <a href="https://github.com/artificialbutter/UwuifierBot/issues">Report Bug</a>
   </p>
 </div>
 
@@ -45,7 +45,7 @@
 <img src="screenshot.png"
          alt="Screenshot">
 
-The TextFun discord bot is a easy way to mess around with text in discord.
+The Uwuifier discord bot is a easy way to mess around with text in discord.
 You can uwuify text, turn it into a emojipasta, or even convert it to morse code. (with more coming soon)
 
 So that looks like this:
