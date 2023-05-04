@@ -43,9 +43,6 @@ module.exports = class extends SlashCommand {
 
         await ctx.defer();
          
-        // send to statcord
-        const { statcord } = require('..');
-        statcord.postCommand("Emojify", ctx.user.id);
 
         if (emojifiedtext.length <= 2000) { // if emojified text is too long to send in discord
           ctx.sendFollowUp({ content: emojifiedtext }); // send emojified text if it isn't too long

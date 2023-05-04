@@ -27,9 +27,6 @@ module.exports = class extends SlashCommand {
 
         await ctx.defer();
          
-        // send to statcord
-        const { statcord } = require('..');
-        statcord.postCommand("Uwuify Words", ctx.user.id);
 
         if (uwuifiedtext.length <= 2000) { // if uwuified text is too long to send in discord
           ctx.sendFollowUp({ content: uwuifiedtext });  // send uwuified text if it isn't too long

@@ -26,9 +26,6 @@ module.exports = class extends SlashCommand {
 
         await ctx.defer();
          
-        // send to statcord
-        const { statcord } = require('..');
-        statcord.postCommand("Clap", ctx.user.id);
 
         if (convertedtext.length <= 2000) { // if converted text is too long to send in discord
           ctx.sendFollowUp({ content: convertedtext }); // send converted text if it isn't too long

@@ -16,9 +16,6 @@ module.exports = class extends SlashCommand {
 
         await ctx.defer();
          
-        // send to statcord
-        const { statcord } = require('..');
-        statcord.postCommand("About", ctx.user.id);
 
         ctx.sendFollowUp({
             embeds: [
