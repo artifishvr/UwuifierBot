@@ -1,5 +1,8 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
 const replaceWord = require('replace-word');
+const fs = require('fs');
+const path = require("path");
+const SnowflakeCodon = require("snowflake-codon");
 
 module.exports = class extends SlashCommand {
     constructor(creator) {
@@ -28,39 +31,33 @@ module.exports = class extends SlashCommand {
     async run(ctx) {
         try {
             const text = ctx.options.text;
-            var emojifiedtext = "";
-
-            if (ctx.options.density) {
-                if (ctx.options.density >= 100) { // if density is too high
-                    ctx.sendFollowUp({ content: "Density can only be from 1-100" }); // send error message & exit
-                    return;
-                } else {
-                    emojifiedtext = replaceWord.emojipasta(text, ctx.options.density); // emojify text with requested density
-                }
-            } else {
-                emojifiedtext = replaceWord.emojipasta(text, 100); // emojify text with default density if none is specified
-            }
+            var emojifiedtext = replaceWord.emojipasta(text, 100);
+            const generator = new SnowflakeCodon(1, 99, 2021, 200);          
 
             await ctx.defer();
 
+            if (ctx.options.density) {
+                if (ctx.options.density > 100 || ctx.options.density < 1) { return ctx.sendFollowUp({ content: "Density can only be from 1-100" }); };
+                
+                emojifiedtext = replaceWord.emojipasta(text, ctx.options.density);
+            };
 
-            if (emojifiedtext.length <= 2000) { // if converted text is too long to send in discord
-                ctx.sendFollowUp({ content: emojifiedtext });
-            } else if (emojifiedtext.length <= 4000) { // yandere dev moment
-                ctx.sendFollowUp({ content: emojifiedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: emojifiedtext.substring(2000, 4000) });
-            } else if (emojifiedtext.length <= 6000) {
-                ctx.sendFollowUp({ content: emojifiedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: emojifiedtext.substring(2000, 4000) });
-                ctx.sendFollowUp({ content: emojifiedtext.substring(4000, 6000) });
-            } else if (emojifiedtext.length <= 8000) {
-                ctx.sendFollowUp({ content: emojifiedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: emojifiedtext.substring(2000, 4000) });
-                ctx.sendFollowUp({ content: emojifiedtext.substring(4000, 6000) });
-                ctx.sendFollowUp({ content: emojifiedtext.substring(6000, 8000) });
-            } else {
-                ctx.sendFollowUp({ content: "That text was too long to emojify." });
+            if (emojifiedtext.length > 2000) { // if converted text is too long to send in discord
+                var snowflakeid = generator.nextId();
+
+                fs.writeFileSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt'), emojifiedtext); // write to file
+
+                ctx.sendFollowUp({
+                    content: "", file: {
+                        name: 'uwuify-' + snowflakeid + '.txt',
+                        file: fs.readFileSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt'))
+                    }
+                });
+                fs.unlinkSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt')); // delete file
+                return;
             }
+
+            ctx.sendFollowUp({ content: emojifiedtext });
         } catch (error) {
             console.error(error);
         }

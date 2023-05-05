@@ -1,5 +1,8 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
 const replaceWord = require('replace-word');
+const fs = require('fs');
+const path = require("path");
+const SnowflakeCodon = require("snowflake-codon");
 
 module.exports = class extends SlashCommand {
     constructor(creator) {
@@ -23,27 +26,27 @@ module.exports = class extends SlashCommand {
         try {
             const text = ctx.options.text;
             const convertedtext = replaceWord.clap(text);
+            const generator = new SnowflakeCodon(1, 99, 2021, 200);
 
             await ctx.defer();
 
 
-            if (convertedtext.length <= 2000) { // if converted text is too long to send in discord
-                ctx.sendFollowUp({ content: convertedtext });
-            } else if (convertedtext.length <= 4000) { // yandere dev moment
-                ctx.sendFollowUp({ content: convertedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: convertedtext.substring(2000, 4000) });
-            } else if (convertedtext.length <= 6000) {
-                ctx.sendFollowUp({ content: convertedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: convertedtext.substring(2000, 4000) });
-                ctx.sendFollowUp({ content: convertedtext.substring(4000, 6000) });
-            } else if (convertedtext.length <= 8000) {
-                ctx.sendFollowUp({ content: convertedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: convertedtext.substring(2000, 4000) });
-                ctx.sendFollowUp({ content: convertedtext.substring(4000, 6000) });
-                ctx.sendFollowUp({ content: convertedtext.substring(6000, 8000) });
-            } else {
-                ctx.sendFollowUp({ content: "That text was too long to add claps to." });
+            if (convertedtext.length > 2000) { // if converted text is too long to send in discord
+                var snowflakeid = generator.nextId();
+
+                fs.writeFileSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt'), convertedtext); // write to file
+
+                ctx.sendFollowUp({
+                    content: "", file: {
+                        name: 'uwuify-' + snowflakeid + '.txt',
+                        file: fs.readFileSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt'))
+                    }
+                });
+                fs.unlinkSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt')); // delete file
+                return;
             }
+
+            ctx.sendFollowUp({ content: convertedtext });
         } catch (error) {
             console.error(error);
         }
