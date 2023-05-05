@@ -15,25 +15,38 @@ module.exports = class extends SlashCommand {
                 }
             ],
 
-            guildIDs: process.env.DISCORD_GUILD_ID ? [ process.env.DISCORD_GUILD_ID ] : undefined
+            guildIDs: process.env.DISCORD_GUILD_ID ? [process.env.DISCORD_GUILD_ID] : undefined
         });
     }
 
-    async run (ctx) {
-    try {
-        const uwuifier = new Uwuifier(); // create new uwuifier instance
-        const text = ctx.options.text;
-        const uwuifiedtext = uwuifier.uwuifyWords(text);
+    async run(ctx) {
+        try {
+            const uwuifier = new Uwuifier(); // create new uwuifier instance
+            const text = ctx.options.text;
+            const uwuifiedtext = uwuifier.uwuifyWords(text);
 
-        await ctx.defer();
-         
+            await ctx.defer();
 
-        if (uwuifiedtext.length <= 2000) { // if uwuified text is too long to send in discord
-          ctx.sendFollowUp({ content: uwuifiedtext });  // send uwuified text if it isn't too long
-        } else {
-          ctx.sendFollowUp({ content: "That text was too long to uwuify." });  // send error message if it is too long
+
+            if (uwuifiedtext.length <= 2000) { // if uwuified text is too long to send in discord
+                ctx.sendFollowUp({ content: uwuifiedtext });
+            } else if (uwuifiedtext.length <= 4000) { // yandere dev moment
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(0, 2000) });
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(2000, 4000) });
+            } else if (uwuifiedtext.length <= 6000) {
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(0, 2000) });
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(2000, 4000) });
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(4000, 6000) });
+            } else if (uwuifiedtext.length <= 8000) {
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(0, 2000) });
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(2000, 4000) });
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(4000, 6000) });
+                ctx.sendFollowUp({ content: uwuifiedtext.substring(6000, 8000) });
+            } else {
+                ctx.sendFollowUp({ content: "That text was too long to uwuify." });
+            }
+        } catch (error) {
+            console.error(error);
         }
-    } catch (error) {
-        console.error(error);
-    }}
+    }
 };

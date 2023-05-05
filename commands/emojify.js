@@ -21,35 +21,48 @@ module.exports = class extends SlashCommand {
                 }
             ],
 
-            guildIDs: process.env.DISCORD_GUILD_ID ? [ process.env.DISCORD_GUILD_ID ] : undefined
+            guildIDs: process.env.DISCORD_GUILD_ID ? [process.env.DISCORD_GUILD_ID] : undefined
         });
     }
 
-    async run (ctx) {
-    try {
-        const text = ctx.options.text;
-        var emojifiedtext = "";
+    async run(ctx) {
+        try {
+            const text = ctx.options.text;
+            var emojifiedtext = "";
 
-        if (ctx.options.density) {
-            if (ctx.options.density >= 100) { // if density is too high
-            ctx.sendFollowUp({ content: "Density can only be from 1-100" }); // send error message & exit
-            return; 
+            if (ctx.options.density) {
+                if (ctx.options.density >= 100) { // if density is too high
+                    ctx.sendFollowUp({ content: "Density can only be from 1-100" }); // send error message & exit
+                    return;
+                } else {
+                    emojifiedtext = replaceWord.emojipasta(text, ctx.options.density); // emojify text with requested density
+                }
             } else {
-            emojifiedtext = replaceWord.emojipasta(text, ctx.options.density); // emojify text with requested density
+                emojifiedtext = replaceWord.emojipasta(text, 100); // emojify text with default density if none is specified
             }
-        } else {
-            emojifiedtext = replaceWord.emojipasta(text, 100); // emojify text with default density if none is specified
-        }
 
-        await ctx.defer();
-         
+            await ctx.defer();
 
-        if (emojifiedtext.length <= 2000) { // if emojified text is too long to send in discord
-          ctx.sendFollowUp({ content: emojifiedtext }); // send emojified text if it isn't too long
-        } else {
-          ctx.sendFollowUp({ content: "That text was too long to emojify." }); // send error message if it is too long
+
+            if (emojifiedtext.length <= 2000) { // if converted text is too long to send in discord
+                ctx.sendFollowUp({ content: emojifiedtext });
+            } else if (emojifiedtext.length <= 4000) { // yandere dev moment
+                ctx.sendFollowUp({ content: emojifiedtext.substring(0, 2000) });
+                ctx.sendFollowUp({ content: emojifiedtext.substring(2000, 4000) });
+            } else if (emojifiedtext.length <= 6000) {
+                ctx.sendFollowUp({ content: emojifiedtext.substring(0, 2000) });
+                ctx.sendFollowUp({ content: emojifiedtext.substring(2000, 4000) });
+                ctx.sendFollowUp({ content: emojifiedtext.substring(4000, 6000) });
+            } else if (emojifiedtext.length <= 8000) {
+                ctx.sendFollowUp({ content: emojifiedtext.substring(0, 2000) });
+                ctx.sendFollowUp({ content: emojifiedtext.substring(2000, 4000) });
+                ctx.sendFollowUp({ content: emojifiedtext.substring(4000, 6000) });
+                ctx.sendFollowUp({ content: emojifiedtext.substring(6000, 8000) });
+            } else {
+                ctx.sendFollowUp({ content: "That text was too long to emojify." });
+            }
+        } catch (error) {
+            console.error(error);
         }
-    } catch (error) {
-        console.error(error);
-    }}
+    }
 };
