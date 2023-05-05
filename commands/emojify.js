@@ -37,7 +37,7 @@ module.exports = class extends SlashCommand {
             await ctx.defer();
 
             if (ctx.options.density) {
-                if (ctx.options.density > 100 || ctx.options.density < 1) { return ctx.sendFollowUp({ content: "Density can only be from 1-100" }); };
+                if (ctx.options.density > 100 || ctx.options.density < 1) { return ctx.sendFollowUp({ content: "Density can only be from 1-100", ephemeral: true }); };
                 
                 emojifiedtext = replaceWord.emojipasta(text, ctx.options.density);
             };
