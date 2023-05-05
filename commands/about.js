@@ -1,56 +1,57 @@
 const { SlashCommand } = require('slash-create');
+const pjson = require('../package.json');
 
 module.exports = class extends SlashCommand {
-    constructor(creator) {
-        super(creator, {
-            name: 'about',
-            description: 'About TextFun',
+  constructor(creator) {
+    super(creator, {
+      name: 'about',
+      description: 'About Uwuifier',
 
-            guildIDs: process.env.DISCORD_GUILD_ID ? [ process.env.DISCORD_GUILD_ID ] : undefined
-        });
-    }
+      guildIDs: process.env.DISCORD_GUILD_ID ? [process.env.DISCORD_GUILD_ID] : undefined
+    });
+  }
 
-    async run (ctx) {
+  async run(ctx) {
 
-        const { client } = require('..');
+    const { client } = require('..');
 
-        await ctx.defer();
-         
+    await ctx.defer();
 
-        ctx.sendFollowUp({
-            embeds: [
-                {
-                  title: `TextFun `,
-                  description: `The discord bot to make your messages worse.`,
-                  color: 0xfafbfb,
-                  fields: [
-                    {
-                      name: `Status Page`,
-                      value: `https://status.artificialbutter.ml`,
-                      inline: true
-                    },
-                    {
-                      name: `GitHub`,
-                      value: `https://github.com/artificialbutter/TextFun`,
-                      inline: true
-                    },
-                    {
-                      name: `Server Count`,
-                      value: `${client.guilds.cache.size}`,
-                      inline: true
-                    }
-                  ],
-                  thumbnail: {
-                    "url": `https://github.com/artificialbutter/TextFun/raw/main/icon.png`,
-                    "height": 0,
-                    "width": 0
-                  },
-                  footer: {
-                    text: `Coded by ArtificialButter`,
-                    icon_url: `https://avatars.githubusercontent.com/u/59352535?v=4`
-                  }
-                }
-              ]
-            });
-    }
+
+    ctx.sendFollowUp({
+      embeds: [
+        {
+          title: `Uwuifier `,
+          description: `The discord bot to make your messages worse.`,
+          color: 0xfafbfb,
+          fields: [
+            {
+              name: `Version`,
+              value: `${pjson.version}`,
+              inline: true
+            },
+            {
+              name: `GitHub`,
+              value: `https://github.com/artificialbutter/Uwuifier`,
+              inline: true
+            },
+            {
+              name: `Server Count`,
+              value: `${client.guilds.cache.size}`,
+              inline: true
+            }
+          ],
+          thumbnail: {
+            "url": `https://github.com/artificialbutter/Uwuifier/raw/main/icon.png`,
+            "height": 0,
+            "width": 0
+          },
+          footer: {
+            text: `Built by artificial`,
+            icon_url: `https://avatars.githubusercontent.com/u/59352535?v=4`
+          }
+        }
+      ]
+    });
+  }
 };
