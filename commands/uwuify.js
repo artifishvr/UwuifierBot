@@ -1,5 +1,8 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
 const { Uwuifier } = require('@patarapolw/uwuifier');
+const fs = require('fs');
+const path = require("path");
+const SnowflakeCodon = require("snowflake-codon");
 
 module.exports = class extends SlashCommand {
     constructor(creator) {
@@ -28,8 +31,10 @@ module.exports = class extends SlashCommand {
     async run(ctx) {
         try {
             const uwuifier = new Uwuifier(); // create new uwuifier instance
+            const generator = new SnowflakeCodon(1, 99, 2021, 200);
             const text = ctx.options.text;
             var uwuifiedtext = uwuifier.uwuifyWords(text);
+
 
             await ctx.defer();
 
@@ -37,24 +42,23 @@ module.exports = class extends SlashCommand {
                 uwuifiedtext = uwuifier.uwuifySentence(text);
             };
 
+            if (uwuifiedtext.length > 2000) { // if converted text is too long to send in discord
+                var snowflakeid = generator.nextId();
 
-            if (uwuifiedtext.length <= 2000) { // if uwuified text is too long to send in discord
-                ctx.sendFollowUp({ content: uwuifiedtext });
-            } else if (uwuifiedtext.length <= 4000) { // yandere dev moment
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(2000, 4000) });
-            } else if (uwuifiedtext.length <= 6000) {
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(2000, 4000) });
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(4000, 6000) });
-            } else if (uwuifiedtext.length <= 8000) {
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(0, 2000) });
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(2000, 4000) });
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(4000, 6000) });
-                ctx.sendFollowUp({ content: uwuifiedtext.substring(6000, 8000) });
-            } else {
-                ctx.sendFollowUp({ content: "That text was too long to uwuify." });
+                fs.writeFileSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt'), uwuifiedtext); // write to file
+
+                ctx.sendFollowUp({
+                    content: "", file: {
+                        name: 'uwuify-' + snowflakeid + '.txt',
+                        file: fs.readFileSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt'))
+                    }
+                });
+                fs.unlinkSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt')); // delete file
+                return;
             }
+
+            ctx.sendFollowUp({ content: uwuifiedtext });
+
         } catch (error) {
             console.error(error);
         }

@@ -1,4 +1,5 @@
 const dotenv = require("dotenv");
+const fs = require('fs');
 const path = require("path");
 const { SlashCreator, GatewayServer } = require("slash-create");
 const { Client, GatewayIntentBits, ActivityType } = require("discord.js");
@@ -11,17 +12,17 @@ const client = new Client({
 
 
 const creator = new SlashCreator({
-    applicationID: process.env.DISCORD_CLIENT_ID,
-    publicKey: process.env.DISCORD_CLIENT_PUBKEY,
-    token: process.env.DISCORD_CLIENT_TOKEN,
-    client
-  });
+  applicationID: process.env.DISCORD_CLIENT_ID,
+  publicKey: process.env.DISCORD_CLIENT_PUBKEY,
+  token: process.env.DISCORD_CLIENT_TOKEN,
+  client
+});
 
 client.on("ready", () => { // when bot client is ready 
   client.user.setActivity("hewwo", { // set bot activity
     type: ActivityType.Watching,
   });
-  setInterval(() => { 
+  setInterval(() => {
     client.user.setActivity("hewwo", { // set bot activity again later to fix discord weirdness
       type: ActivityType.Watching,
     });
@@ -33,6 +34,9 @@ client.on("ready", () => { // when bot client is ready
 
 });
 
+if (!fs.existsSync("./temp")) {
+  fs.mkdirSync("./temp");
+}
 
 creator
   .withServer(
