@@ -12,7 +12,13 @@ module.exports = class extends SlashCommand {
                     type: CommandOptionType.STRING,
                     description: 'Text to Uwuify',
                     required: true
-                }
+                },
+                {
+                    name: 'words',
+                    type: CommandOptionType.BOOLEAN,
+                    description: 'Add uwu words?',
+                    required: false
+                },
             ],
 
             guildIDs: process.env.DISCORD_GUILD_ID ? [process.env.DISCORD_GUILD_ID] : undefined
@@ -23,9 +29,13 @@ module.exports = class extends SlashCommand {
         try {
             const uwuifier = new Uwuifier(); // create new uwuifier instance
             const text = ctx.options.text;
-            const uwuifiedtext = uwuifier.uwuifySentence(text);
+            var uwuifiedtext = uwuifier.uwuifyWords(text);
 
             await ctx.defer();
+
+            if (ctx.options.words == true) {
+                uwuifiedtext = uwuifier.uwuifySentence(text);
+            };
 
 
             if (uwuifiedtext.length <= 2000) { // if uwuified text is too long to send in discord
