@@ -19,7 +19,13 @@ module.exports = class extends SlashCommand {
                 {
                     name: 'words',
                     type: CommandOptionType.BOOLEAN,
-                    description: 'Add uwu words?',
+                    description: 'Adds random s-s-stutters to certain words, adds actions and random faces in between words.',
+                    required: false
+                },
+                {
+                    name: 'exclamations',
+                    type: CommandOptionType.BOOLEAN,
+                    description: 'Replaces exclamations with more \"expressive\" exclamations',
                     required: false
                 },
             ],
@@ -39,8 +45,13 @@ module.exports = class extends SlashCommand {
             await ctx.defer();
 
             if (ctx.options.words == true) {
-                uwuifiedtext = uwuifier.uwuifySentence(text);
+                uwuifiedtext = uwuifier.uwuifySpaces(uwuifiedtext); 
             };
+
+            if (ctx.options.exclamations == true) {
+                uwuifiedtext = uwuifier.uwuifyExclamations(uwuifiedtext); // it's quite shrimple
+            };
+
 
             if (uwuifiedtext.length > 2000) { // if converted text is too long to send in discord
                 var snowflakeid = generator.nextId();
@@ -55,7 +66,8 @@ module.exports = class extends SlashCommand {
                 });
                 fs.unlinkSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt')); // delete file
                 return;
-            }
+            } // :3
+
 
             ctx.sendFollowUp({ content: uwuifiedtext });
 

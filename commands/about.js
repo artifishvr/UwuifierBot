@@ -21,7 +21,7 @@ module.exports = class extends SlashCommand {
     ctx.sendFollowUp({
       embeds: [
         {
-          title: `Uwuifier `,
+          title: `Uwuifier`,
           description: `The discord bot to make your messages worse.`,
           color: 0xfafbfb,
           fields: [
@@ -32,7 +32,7 @@ module.exports = class extends SlashCommand {
             },
             {
               name: `GitHub`,
-              value: `https://github.com/artificialbutter/Uwuifier`,
+              value: `${pjson.repository}`,
               inline: true
             },
             {
