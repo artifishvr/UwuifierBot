@@ -29,8 +29,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#self-hosting">Self Hosting</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
   </ol>
@@ -62,15 +61,25 @@ The bot uses Discord Slash Commands, so you can find the command list in your di
 * [/Create](https://www.npmjs.com/package/slash-create)
 * [uwuifier](https://www.npmjs.com/package/@patarapolw/uwuifier)
 * [replace-word](https://www.npmjs.com/package/replace-word)
-* [statcord.js](https://statcord.com)
 
 
 
+<!-- SELF HOSTING -->
+## Self Hosting
+### Docker (Recommended)
+1. Install <a href="https://docs.docker.com/get-docker/">Docker </a> 
+2. Run `docker run --env=DISCORD_CLIENT_ID=BOTID --env=DISCORD_CLIENT_TOKEN=BOTTOKEN --env=DISCORD_CLIENT_PUBKEY=BOTPUBLICKEY -d artificialbutter/uwuifierbot:stable` <br>(replacing BOTID, BOTTOKEN, and BOTPUBLICKEY with your bot's info)
+### Manual
+Requirements:
+* [Node.js](https://nodejs.org/en/) v18.16.0 LTS or newer
+* npm
+* git
 
-<!-- USAGE EXAMPLES -->
-## Usage
-#### This bot's commands are accessed using discord's slash commands, which can be accessed by typing / in discord.
-See Discord's <a href="https://support.discord.com/hc/en-us/articles/1500000368501-Slash-Commands-FAQ">Slash Command FAQ</a> for more info
+Steps:
+1. Clone the repo with `git clone https://github.com/artificialbutter/UwuifierBot.git`
+2. Install required packages with `npm install` 
+3. Start the bot with `npm start`
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
