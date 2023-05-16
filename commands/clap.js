@@ -1,5 +1,4 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
-const replaceWord = require('replace-word');
 const fs = require('fs');
 const path = require("path");
 const SnowflakeCodon = require("snowflake-codon");
@@ -25,7 +24,7 @@ module.exports = class extends SlashCommand {
     async run(ctx) {
         try {
             const text = ctx.options.text;
-            const convertedtext = replaceWord.clap(text);
+            const convertedtext = text.replace(/ /g, "👏");
             const generator = new SnowflakeCodon(1, 99, 2021, 200);
 
             await ctx.defer();

@@ -1,6 +1,6 @@
 {
     "name": "uwuifier",
-    "version": "1.4.4",
+    "version": "1.4.5",
     "description": "The discord bot to make your messages worse.",
     "main": "index.js",
     "repository": "https://github.com/artificialbutter/UwuifierBot",
