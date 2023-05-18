@@ -6,8 +6,6 @@ module.exports = class extends SlashCommand {
     super(creator, {
       name: 'about',
       description: 'About Uwuifier',
-
-      guildIDs: process.env.DISCORD_GUILD_ID ? [process.env.DISCORD_GUILD_ID] : undefined
     });
   }
 

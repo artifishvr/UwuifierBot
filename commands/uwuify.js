@@ -28,9 +28,7 @@ module.exports = class extends SlashCommand {
                     description: 'Replaces exclamations with more \"expressive\" exclamations',
                     required: false
                 },
-            ],
-
-            guildIDs: process.env.DISCORD_GUILD_ID ? [process.env.DISCORD_GUILD_ID] : undefined
+            ]
         });
     }
 

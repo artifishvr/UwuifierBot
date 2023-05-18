@@ -22,9 +22,7 @@ module.exports = class extends SlashCommand {
                     description: 'The density of the emojis. Can be 1-100 (default: 100)',
                     required: false
                 }
-            ],
-
-            guildIDs: process.env.DISCORD_GUILD_ID ? [process.env.DISCORD_GUILD_ID] : undefined
+            ]
         });
     }
 
