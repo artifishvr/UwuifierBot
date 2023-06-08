@@ -4,7 +4,6 @@ function sendMessage(uwuifiedtext, ctx) {
     try {
         const generator = new SnowflakeCodon(1, 99, 2021, 200);
 
-
         if (uwuifiedtext.length > 2000) {
             var snowflakeid = generator.nextId();
 
