@@ -34,10 +34,6 @@ client.on("ready", () => { // when bot client is ready
 
 });
 
-if (!fs.existsSync("./temp")) {
-  fs.mkdirSync("./temp");
-}
-
 creator
   .withServer(
     new GatewayServer(

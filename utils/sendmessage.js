@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require("path");
 const SnowflakeCodon = require("snowflake-codon");
 
 function sendMessage(uwuifiedtext, ctx) {
@@ -10,15 +8,14 @@ function sendMessage(uwuifiedtext, ctx) {
         if (uwuifiedtext.length > 2000) {
             var snowflakeid = generator.nextId();
 
-            fs.writeFileSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt'), uwuifiedtext); 
+            var uwuifiedbuffer = Buffer.from(uwuifiedtext);
 
             ctx.sendFollowUp({
                 content: "", file: {
                     name: 'uwuify-' + snowflakeid + '.txt',
-                    file: fs.readFileSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt'))
+                    file: uwuifiedbuffer
                 }
             });
-            fs.unlinkSync(path.resolve('./temp/uwuify-' + snowflakeid + '.txt')); 
             return;
         } // :3
 
