@@ -1,4 +1,8 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
+const { sendMessage } = require('../utils/sendmessage.js')
+const fs = require('fs');
+const path = require("path");
+const Jimp = require("jimp");
 
 module.exports = class extends SlashCommand {
     constructor(creator) {
@@ -7,13 +11,13 @@ module.exports = class extends SlashCommand {
             description: 'Classic top text bottom text meme generator',
             options: [
                 {
-                    name: 'tt',
+                    name: 'toptext',
                     type: CommandOptionType.STRING,
                     description: 'Top Text',
                     required: false
                 },
                 {
-                    name: 'bt',
+                    name: 'bottomtext',
                     type: CommandOptionType.STRING,
                     description: 'Bottom Text',
                     required: false
@@ -36,8 +40,7 @@ module.exports = class extends SlashCommand {
 
             await ctx.defer();
 
-            fs.writeFileSync(path.resolve('./temp/uwuifyimage'), image); 
-
+            console.log(image);
             sendMessage('convertedtext', ctx);
         } catch (error) {
             console.error(error);
