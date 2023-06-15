@@ -10,8 +10,7 @@
   <h3 align="center">Uwuifier</h3>
   <img src='https://img.shields.io/github/license/artificialbutter/UwuifierBot?style=flat-square'>
   <img src='https://img.shields.io/github/commit-activity/m/artificialbutter/UwuifierBot?style=flat-square'>
-  <img src='https://img.shields.io/docker/pulls/artificialbutter/uwuifierbot?style=flat-square'>
-
+  
   <p align="center">
     <a href="https://discord.com/api/oauth2/authorize?client_id=969743347138822174&permissions=2147801152&scope=bot%20applications.commands"><strong>Invite the bot! »</strong></a>
     <br />
