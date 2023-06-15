@@ -70,7 +70,7 @@ The bot uses Discord Slash Commands, so you can find the command list in your di
 ## Self Hosting
 ### Docker (Recommended)
 1. Install <a href="https://docs.docker.com/get-docker/">Docker </a> 
-2. Run `docker run --env=DISCORD_CLIENT_ID=BOTID --env=DISCORD_CLIENT_TOKEN=BOTTOKEN --env=DISCORD_CLIENT_PUBKEY=BOTPUBLICKEY -d artificialbutter/uwuifierbot:stable` <br>(replacing BOTID, BOTTOKEN, and BOTPUBLICKEY with your bot's info)
+2. Run `docker run --env=DISCORD_CLIENT_ID=BOTID --env=DISCORD_CLIENT_TOKEN=BOTTOKEN --env=DISCORD_CLIENT_PUBKEY=BOTPUBLICKEY -d ghcr.io/artificialbutter/uwuifierbot:main` <br>(replacing BOTID, BOTTOKEN, and BOTPUBLICKEY with your bot's info)
 ### Manual
 Requirements:
 * [Node.js](https://nodejs.org/en/) v18.16.0 LTS or newer
