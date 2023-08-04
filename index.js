@@ -18,23 +18,33 @@ const creator = new SlashCreator({
   client
 });
 
-client.on("ready", () => { // when bot client is ready 
-
-  if (!process.env.NODE_ENV) { // if not in production
-    client.user.setActivity("development", {
-      type: ActivityType.Listening,
-    });
-  }
-
+function updatePresence() {
   client.user.setActivity(":3", { // set bot activity
     type: ActivityType.Watching,
   });
-  
+}
 
+client.on("ready", () => { // when bot client is ready 
+  if (process.env.NODE_ENV != "production") { // if not in production
+    client.user.setActivity("development", {
+      type: ActivityType.Listening,
+    });
+
+    console.log("⚠️ Development mode!");
+
+    console.log(`Logged in as ${client.user.tag}`);
+
+    return;
+  }
   console.log(`Logging in as ${client.user.tag}`);
+
+  updatePresence();
 
   console.log("Ready!");
 
+  setInterval(() => {
+    updatePresence();
+  }, 60000);
 });
 
 creator
