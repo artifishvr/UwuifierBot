@@ -7,19 +7,13 @@ const Jimp = require("jimp");
 module.exports = class extends SlashCommand {
     constructor(creator) {
         super(creator, {
-            name: 'meme',
-            description: 'Classic top text bottom text meme generator',
+            name: 'caption',
+            description: 'iFunny/EsmBot style caption generator',
             options: [
                 {
-                    name: 'toptext',
+                    name: 'caption',
                     type: CommandOptionType.STRING,
                     description: 'Top Text',
-                    required: false
-                },
-                {
-                    name: 'bottomtext',
-                    type: CommandOptionType.STRING,
-                    description: 'Bottom Text',
                     required: false
                 },
                 {
@@ -36,14 +30,20 @@ module.exports = class extends SlashCommand {
 
     async run(ctx) {
         try {
-            const tt = ctx.options.tt;
-            const bt = ctx.options.bt;
+            const cap = ctx.options.caption;
             const image = ctx.options.image;
 
             await ctx.defer();
 
-            console.log(image);
-            sendMessage('convertedtext', ctx);
+            let font = await Jimp.loadFont(Jimp.FONT_SANS_32_BLACK)
+            let jiiimpimage = await Jimp.read(image)
+
+            jiiimpimage.print(font, 20, 20, cap)
+
+            
+            jiiimpimage.write('../temp/temp.png');
+
+            ctx.sendFollowUp({ content:'brushjfr', file: '../temp/temp.png' });
         } catch (error) {
             console.error(error);
         }

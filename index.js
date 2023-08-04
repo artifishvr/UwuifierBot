@@ -41,7 +41,10 @@ creator
     )
   )
   .registerCommandsIn(path.join(__dirname, 'commands'))
-  .syncCommands();
+  .syncCommands({
+    deleteCommands: true,
+    syncGuilds: true
+  });
 
 client.login(process.env.DISCORD_CLIENT_TOKEN);
 module.exports = {
