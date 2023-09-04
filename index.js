@@ -18,20 +18,33 @@ const creator = new SlashCreator({
   client
 });
 
-client.on("ready", () => { // when bot client is ready 
-  client.user.setActivity("hewwo", { // set bot activity
+function updatePresence() {
+  client.user.setActivity(":3", { // set bot activity
     type: ActivityType.Watching,
   });
-  setInterval(() => {
-    client.user.setActivity("hewwo", { // set bot activity again later to fix discord weirdness
-      type: ActivityType.Watching,
-    });
-  }, 3600000);
+}
 
+client.on("ready", () => { // when bot client is ready 
+  if (process.env.NODE_ENV != "production") { // if not in production
+    client.user.setActivity("development", {
+      type: ActivityType.Listening,
+    });
+
+    console.log("⚠️ Development mode!");
+
+    console.log(`Logged in as ${client.user.tag}`);
+
+    return;
+  }
   console.log(`Logging in as ${client.user.tag}`);
+
+  updatePresence();
 
   console.log("Ready!");
 
+  setInterval(() => {
+    updatePresence();
+  }, 60000);
 });
 
 creator
@@ -42,8 +55,7 @@ creator
   )
   .registerCommandsIn(path.join(__dirname, 'commands'))
   .syncCommands({
-    deleteCommands: true,
-    syncGuilds: true
+    deleteCommands: true
   });
 
 client.login(process.env.DISCORD_CLIENT_TOKEN);
