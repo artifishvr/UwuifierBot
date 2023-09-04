@@ -6,9 +6,9 @@ function sendMessage(uwuifiedtext, ctx) {
 
 
         if (uwuifiedtext.length > 2000) {
-            var snowflakeid = generator.nextId();
+            let snowflakeid = generator.nextId();
 
-            var uwuifiedbuffer = Buffer.from(uwuifiedtext);
+            let uwuifiedbuffer = Buffer.from(uwuifiedtext);
 
             ctx.sendFollowUp({
                 content: "", file: {

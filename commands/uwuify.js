@@ -23,7 +23,7 @@ module.exports = class extends SlashCommand {
                 {
                     name: 'exclamations',
                     type: CommandOptionType.BOOLEAN,
-                    description: 'Replaces exclamations with more \"expressive\" exclamations',
+                    description: 'Replaces exclamations with more "expressive" exclamations',
                     required: false
                 },
             ]
@@ -34,16 +34,16 @@ module.exports = class extends SlashCommand {
         try {
             const uwuifier = new Uwuifier(); // create new uwuifier instance
             const text = ctx.options.text;
-            var uwuifiedtext = uwuifier.uwuifyWords(text);
+            let uwuifiedtext = uwuifier.uwuifyWords(text);
 
 
             await ctx.defer();
 
-            if (ctx.options.words == true) {
-                uwuifiedtext = uwuifier.uwuifySpaces(uwuifiedtext); 
+            if (ctx.options.words) {
+                uwuifiedtext = uwuifier.uwuifySpaces(uwuifiedtext);
             };
 
-            if (ctx.options.exclamations == true) {
+            if (ctx.options.exclamations) {
                 uwuifiedtext = uwuifier.uwuifyExclamations(uwuifiedtext); // it's quite shrimple
             };
 
