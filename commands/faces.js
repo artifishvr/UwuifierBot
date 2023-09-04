@@ -1,12 +1,12 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
 const { sendMessage } = require('../utils/sendmessage.js')
-const { insertRandomFaces } = require('../utils/randomface.js');
+const { insertRandomFaces } = require('../utils/randomfaces.js');
 
 module.exports = class extends SlashCommand {
     constructor(creator) {
         super(creator, {
             name: 'faces',
-            description: 'Adds completely random faces to text',
+            description: 'Adds completely random uwu faces to text',
             options: [
                 {
                     name: 'text',
