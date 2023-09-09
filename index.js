@@ -1,10 +1,6 @@
-const dotenv = require("dotenv");
-const fs = require('fs');
 const path = require("path");
 const { SlashCreator, GatewayServer } = require("slash-create");
 const { Client, GatewayIntentBits, ActivityType } = require("discord.js");
-
-dotenv.config();
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],

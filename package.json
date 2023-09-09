@@ -12,7 +12,6 @@
     "dependencies": {
         "@patarapolw/uwuifier": "^2.0.4",
         "discord.js": "^14.1.2",
-        "dotenv": "^16.3.1",
         "replace-word": "^1.0.4",
         "slash-create": "^5.13.0",
         "snowflake-codon": "^4.1.1"

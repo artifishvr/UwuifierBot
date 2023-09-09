@@ -72,14 +72,13 @@ The bot uses Discord Slash Commands, so you can find the command list in your di
 2. Run `docker run --env=DISCORD_CLIENT_ID=BOTID --env=DISCORD_CLIENT_TOKEN=BOTTOKEN --env=DISCORD_CLIENT_PUBKEY=BOTPUBLICKEY -d ghcr.io/artificialbutter/uwuifierbot:main` <br>(replacing BOTID, BOTTOKEN, and BOTPUBLICKEY with your bot's info)
 ### Manual
 Requirements:
-* [Node.js](https://nodejs.org/en/) v18.16.0 LTS or newer
-* npm
+* [bun](https://bun.sh) v1.0.0
 * git
 
 Steps:
 1. Clone the repo with `git clone https://github.com/artificialbutter/UwuifierBot.git`
-2. Install required packages with `npm install` 
-3. Start the bot with `npm start`
+2. Install required packages with `bun install` 
+3. Start the bot with `bun index.js`
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>

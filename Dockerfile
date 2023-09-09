@@ -1,14 +1,14 @@
 # syntax=docker/dockerfile:1
 
-FROM node:20-alpine
+FROM oven/bun
 ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["package.json", "bun.lockb", "./"]
 
-RUN npm install --production
+RUN bun install --production
 
 COPY . .
 
-CMD ["node", "index.js"]
+CMD bun run index.js
