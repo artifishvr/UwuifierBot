@@ -10,6 +10,10 @@ jobs:
       push-image:
         runs-on: ubuntu-latest
         steps:
+          - name: 'Make repo lowercase'
+            run: |
+              echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+              
           - name: 'Checkout GitHub Action'
             uses: actions/checkout@72f2cec99f417b1a1c5e2e88945068983b7965f9
 
@@ -20,7 +24,7 @@ jobs:
               username: ${{github.actor}}
               password: ${{secrets.GH_TOKEN}}
 
-          - name: 'Build & Publish Uwuifier Image'
+          - name: 'Build & Publish Docker Image'
             run: |
-              docker build . --tag ghcr.io/artificialbutter/uwuifierbot:latest
-              docker push ghcr.io/artificialbutter/uwuifierbot:latest
+              docker build . --tag "ghcr.io/${REPO}:latest"
+              docker push "ghcr.io/${REPO}:latest"
