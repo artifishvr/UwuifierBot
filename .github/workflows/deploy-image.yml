@@ -22,5 +22,6 @@ jobs:
 
           - name: 'Build & Publish Docker Image'
             run: |
-              docker build . --tag ghcr.io/${{github.repository}}:latest 
-              docker push ghcr.io/${{github.repository}}:latest
+              echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+              docker build . --tag ghcr.io/$REPO:latest 
+              docker push ghcr.io/$REPO:latest
