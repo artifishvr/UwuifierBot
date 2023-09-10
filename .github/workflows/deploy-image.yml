@@ -20,7 +20,7 @@ jobs:
               username: ${{github.actor}}
               password: ${{secrets.GH_TOKEN}}
 
-          - name: 'Build & Publish Uwuifier Image'
+          - name: 'Build & Publish Docker Image'
             run: |
-              docker build . --tag ghcr.io/artificialbutter/uwuifierbot:latest
-              docker push ghcr.io/artificialbutter/uwuifierbot:latest
+              docker build . --tag ghcr.io/${{github.repository}}:latest 
+              docker push ghcr.io/${{github.repository}}:latest
