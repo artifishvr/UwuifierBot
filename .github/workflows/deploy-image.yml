@@ -9,7 +9,11 @@ on:
 jobs:
       push-image:
         runs-on: ubuntu-latest
-        steps:        
+        steps:
+          - name: 'Make repo lowercase'
+            run: |
+              echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+              
           - name: 'Checkout GitHub Action'
             uses: actions/checkout@72f2cec99f417b1a1c5e2e88945068983b7965f9
 
@@ -22,6 +26,5 @@ jobs:
 
           - name: 'Build & Publish Docker Image'
             run: |
-              echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
               docker build . --tag "ghcr.io/${REPO}:latest"
               docker push "ghcr.io/${REPO}:latest"
