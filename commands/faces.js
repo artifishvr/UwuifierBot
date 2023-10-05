@@ -1,6 +1,6 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
-const { sendMessage } = require('../utils/sendmessage.js')
-const { insertRandomFaces } = require('../utils/randomfaces.js');
+const { sendMessage } = require('../utils/sendMessage.js')
+const { insertRandomFaces } = require('../utils/randomFaces.js');
 
 module.exports = class extends SlashCommand {
     constructor(creator) {

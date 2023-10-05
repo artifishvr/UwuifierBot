@@ -1,18 +1,17 @@
 {
     "name": "uwuifier",
-    "version": "1.6.4",
+    "version": "1.7.0",
     "description": "The discord bot to make your messages worse.",
     "main": "index.js",
     "repository": "https://github.com/artificialbutter/UwuifierBot",
     "author": "ArtificialButter",
     "license": "AGPL-3.0",
     "scripts": {
-        "start": "node index.js"
+        "start": "bun index.js"
     },
     "dependencies": {
         "@patarapolw/uwuifier": "^2.0.4",
         "discord.js": "^14.1.2",
-        "replace-word": "^1.0.4",
         "slash-create": "^5.13.0",
         "snowflake-codon": "^4.1.1"
     }

@@ -1,6 +1,6 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
 const { Uwuifier } = require('@patarapolw/uwuifier');
-const { sendMessage } = require('../utils/sendmessage.js')
+const { sendMessage } = require('../utils/sendMessage.js')
 
 module.exports = class extends SlashCommand {
     constructor(creator) {

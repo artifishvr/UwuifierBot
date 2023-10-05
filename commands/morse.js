@@ -1,6 +1,6 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
-const replaceWord = require('replace-word');
-const { sendMessage } = require('../utils/sendmessage.js')
+const { toMorse } = require('../utils/toMorse.js');
+const { sendMessage } = require('../utils/sendMessage.js')
 
 module.exports = class extends SlashCommand {
     constructor(creator) {
@@ -21,12 +21,12 @@ module.exports = class extends SlashCommand {
     async run(ctx) {
         try {
             const text = ctx.options.text;
-            const convertedtext = replaceWord.toMorse(text);
+            const convertedtext = toMorse(text);
 
             await ctx.defer();
 
 
-            sendMessage(convertedtext, ctx);
+            sendMessage(` \`${convertedtext}\` `, ctx);
         } catch (error) {
             console.error(error);
         }

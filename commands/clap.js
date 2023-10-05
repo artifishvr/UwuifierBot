@@ -1,5 +1,5 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
-const { sendMessage } = require('../utils/sendmessage.js')
+const { sendMessage } = require('../utils/sendMessage.js')
 
 module.exports = class extends SlashCommand {
     constructor(creator) {

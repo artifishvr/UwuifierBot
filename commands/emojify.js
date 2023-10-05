@@ -1,6 +1,6 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
-const replaceWord = require('replace-word');
-const { sendMessage } = require('../utils/sendmessage.js')
+const { emojipasta } = require('../utils/emojipasta.js');
+const { sendMessage } = require('../utils/sendMessage.js')
 
 module.exports = class extends SlashCommand {
     constructor(creator) {
@@ -27,14 +27,14 @@ module.exports = class extends SlashCommand {
     async run(ctx) {
         try {
             const text = ctx.options.text;
-            let emojifiedtext = replaceWord.emojipasta(text, 100);
+            let emojifiedtext = emojipasta(text, 100, true);
 
             await ctx.defer();
 
             if (ctx.options.density) {
                 if (ctx.options.density > 100 || ctx.options.density < 1) { return ctx.sendFollowUp({ content: "Density can only be from 1-100", ephemeral: true }); };
 
-                emojifiedtext = replaceWord.emojipasta(text, ctx.options.density);
+                emojifiedtext = emojipasta(text, ctx.options.density, true);
             };
 
             sendMessage(emojifiedtext, ctx);
