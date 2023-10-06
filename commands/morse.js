@@ -1,5 +1,5 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
-const { toMorse } = require('../utils/toMorse.js');
+const { toMorse, fromMorse } = require('../utils/toMorse.js');
 const { sendMessage } = require('../utils/sendMessage.js')
 
 module.exports = class extends SlashCommand {
@@ -13,6 +13,12 @@ module.exports = class extends SlashCommand {
                     type: CommandOptionType.STRING,
                     description: 'Text to Convert',
                     required: true
+                },
+                {
+                    name: 'reverse',
+                    type: CommandOptionType.BOOLEAN,
+                    description: 'Turn morse code back into text',
+                    required: false
                 }
             ]
         });
@@ -21,7 +27,10 @@ module.exports = class extends SlashCommand {
     async run(ctx) {
         try {
             const text = ctx.options.text;
-            const convertedtext = toMorse(text);
+            let convertedtext = toMorse(text);
+            if (ctx.options.reverse) {
+                convertedtext = fromMorse(text);
+            }
 
             await ctx.defer();
 
