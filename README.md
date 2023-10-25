@@ -72,7 +72,8 @@ The bot uses Discord Slash Commands, so you can find the command list in your di
 2. Run `docker run --env=DISCORD_CLIENT_ID=BOTID --env=DISCORD_CLIENT_TOKEN=BOTTOKEN --env=DISCORD_CLIENT_PUBKEY=BOTPUBLICKEY -d ghcr.io/artificialbutter/uwuifierbot` <br>(replacing BOTID, BOTTOKEN, and BOTPUBLICKEY with your bot's info)
 ### Manual
 Requirements:
-* [bun](https://bun.sh) v1.0.0
+* [Node.js](https://nodejs.org/en/) LTS
+* [pnpm](https://pnpm.io/)
 * git
 
 Steps:

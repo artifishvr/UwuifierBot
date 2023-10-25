@@ -1,14 +1,14 @@
-# syntax=docker/dockerfile:1
-
-FROM oven/bun
+FROM node:lts-alpine
 ENV NODE_ENV=production
+
+RUN npm install -g pnpm
 
 WORKDIR /app
 
-COPY ["package.json", "bun.lockb", "./"]
+COPY ["package.json", "pnpm-lock.yaml", "./"]
 
-RUN bun install --production
+RUN pnpm install --prod
 
 COPY . .
 
-CMD bun run index.js
+CMD ["node", "index.js"]
