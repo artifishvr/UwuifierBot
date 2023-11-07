@@ -7,7 +7,7 @@
     "author": "ArtificialButter",
     "license": "AGPL-3.0",
     "scripts": {
-        "start": "bun index.js"
+        "start": "node index.js"
     },
     "dependencies": {
         "@patarapolw/uwuifier": "^2.0.4",
