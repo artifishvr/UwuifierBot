@@ -46,17 +46,17 @@ client.on("ready", () => { // when bot client is ready
   }, 60000);
 });
 
-creator
-  .withServer(
+(async () => {
+  creator.withServer(
     new GatewayServer(
       (handler) => client.ws.on('INTERACTION_CREATE', handler)
     )
-  )
-  .registerCommandsIn(path.join(__dirname, 'commands'))
-  .syncCommands({
-    deleteCommands: true
-  });
+  );
 
+  await creator.registerCommandsIn(path.join(__dirname, 'commands'));
+
+  await creator.syncCommands({ deleteCommands: true });
+})();
 client.login(process.env.DISCORD_CLIENT_TOKEN);
 module.exports = {
   client,
