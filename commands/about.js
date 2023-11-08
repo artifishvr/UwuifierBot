@@ -19,7 +19,7 @@ module.exports = class extends SlashCommand {
     ctx.sendFollowUp({
       embeds: [
         {
-          title: `Uwuifier`,
+          title: `UwUifier`,
           description: `The discord bot to make your messages worse.`,
           color: 0xfafbfb,
           fields: [
@@ -29,14 +29,19 @@ module.exports = class extends SlashCommand {
               inline: true
             },
             {
-              name: `GitHub`,
-              value: `${pjson.repository}`,
-              inline: true
-            },
-            {
               name: `Server Count`,
               value: `${client.guilds.cache.size}`,
               inline: true
+            },
+            {
+              name: `GitHub`,
+              value: `${pjson.repository}`,
+              inline: false
+            },
+            {
+              name: `Support Server`,
+              value: `https://discord.gg/83x5Ans2bF`,
+              inline: false
             }
           ],
           thumbnail: {
@@ -45,8 +50,8 @@ module.exports = class extends SlashCommand {
             "width": 0
           },
           footer: {
-            text: `Built by artificial`,
-            icon_url: `https://avatars.githubusercontent.com/u/59352535?v=4`
+            text: `Built with ❤️ by @artifish`,
+            icon_url: `https://cdn.discordapp.com/avatars/532053122017787924/a4e2c53d286c52a09a088c439522777e.png`
           }
         }
       ]
