@@ -15,8 +15,8 @@ dependencies:
     specifier: ^16.3.1
     version: 16.3.1
   slash-create:
-    specifier: ^6.0.0
-    version: 6.0.0
+    specifier: ^5.13.0
+    version: 5.14.0
   snowflake-codon:
     specifier: ^4.1.1
     version: 4.1.1
@@ -84,11 +84,6 @@ packages:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-    dev: false
-
-  /@fastify/busboy@2.0.0:
-    resolution: {integrity: sha512-JUFJad5lv7jxj926GPgymrWQxxjPYuJNiNjNMzqT+HiuP6Vl3dk5xzG+8sTX96np0ZAluvaMzPsjhHZ5rNuNQQ==}
-    engines: {node: '>=14'}
     dev: false
 
   /@patarapolw/uwuifier@2.0.4:
@@ -192,9 +187,9 @@ packages:
     resolution: {integrity: sha512-wJkXvutRbNWcc37tt5j1HyOK1nosspdh3dj6LUYYAvF6JYNqs53IfRvK9oEpcwiDA1NdoIi64yAMfdivPeVAyw==}
     dev: false
 
-  /slash-create@6.0.0:
-    resolution: {integrity: sha512-SpRT6KuegNYYIyrCeQhawZ3Jr5dZDQ64WObf/l1IGKnJ4c1zC3EZyNWTcnKyQeJAXNSMBezfB0odBRlo4EQJuA==}
-    engines: {node: '>=16'}
+  /slash-create@5.14.0:
+    resolution: {integrity: sha512-V+Zcvs2a9e3obm+zrWw3jr8HcoX5Jtj6cI1ByT0/henOTdEsfh1roOLLhLiLxo80poBZfkLcy3fnn5hTAwF59g==}
+    engines: {node: '>=14'}
     peerDependencies:
       express: ^4
       fastify: ^3 || ^4
@@ -207,7 +202,6 @@ packages:
       eventemitter3: 5.0.1
       lodash.isequal: 4.5.0
       tweetnacl: 1.0.3
-      undici: 5.27.2
     dev: false
 
   /snowflake-codon@4.1.1:
@@ -236,13 +230,6 @@ packages:
     engines: {node: '>=14.0'}
     dependencies:
       busboy: 1.6.0
-    dev: false
-
-  /undici@5.27.2:
-    resolution: {integrity: sha512-iS857PdOEy/y3wlM3yRp+6SNQQ6xU0mmZcwRSriqk+et/cwWAtwmIGf6WkoDN2EK/AMdCO/dfXzIwi+rFMrjjQ==}
-    engines: {node: '>=14.0'}
-    dependencies:
-      '@fastify/busboy': 2.0.0
     dev: false
 
   /ws@8.13.0:
