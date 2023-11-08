@@ -15,15 +15,9 @@ module.exports = class extends SlashCommand {
                     required: true
                 },
                 {
-                    name: 'words',
-                    type: CommandOptionType.BOOLEAN,
-                    description: 'Adds random s-s-stutters to certain words, adds actions and random faces in between words.',
-                    required: false
-                },
-                {
                     name: 'exclamations',
                     type: CommandOptionType.BOOLEAN,
-                    description: 'Replaces exclamations with more "expressive" exclamations',
+                    description: 'Replaces exclamations (?, !) with more "expressive" exclamations',
                     required: false
                 },
             ]
@@ -33,15 +27,11 @@ module.exports = class extends SlashCommand {
     async run(ctx) {
         try {
             const uwuifier = new Uwuifier(); // create new uwuifier instance
-            const text = ctx.options.text;
+            const text = ctx.options.text; 
             let uwuifiedtext = uwuifier.uwuifyWords(text);
 
 
             await ctx.defer();
-
-            if (ctx.options.words) {
-                uwuifiedtext = uwuifier.uwuifySpaces(uwuifiedtext);
-            };
 
             if (ctx.options.exclamations) {
                 uwuifiedtext = uwuifier.uwuifyExclamations(uwuifiedtext); // it's quite shrimple
