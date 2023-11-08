@@ -23,7 +23,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about">About</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -53,8 +53,6 @@ You can uwuify text, turn it into a emojipasta, or even convert it to morse code
 <!-- SELF HOSTING -->
 ## Self Hosting
 
-### Docker (Recommended)
-
 1. Install <a href="https://docs.docker.com/get-docker/">Docker </a>
 2. Run `docker run --env=DISCORD_CLIENT_ID=BOTID --env=DISCORD_CLIENT_TOKEN=BOTTOKEN --env=DISCORD_CLIENT_PUBKEY=BOTPUBLICKEY -d ghcr.io/artificialbutter/uwuifierbot` <br>(replacing BOTID, BOTTOKEN, and BOTPUBLICKEY with your bot's info)
 
@@ -68,5 +66,5 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- LICENSE -->
 ## License
 
-Distributed under the GNU General Public License. See `LICENSE` for more information.
+Distributed under the GNU Affero General Public License v3.0. See `LICENSE` for more information.
 <p align="right">(<a href="#top">back to top</a>)</p>
