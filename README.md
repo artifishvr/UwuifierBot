@@ -48,7 +48,6 @@ You can uwuify text, turn it into a emojipasta, or even convert it to morse code
 * [discord.js](https://discord.js.org/)
 * [/Create](https://www.npmjs.com/package/slash-create)
 * [uwuifier](https://www.npmjs.com/package/@patarapolw/uwuifier)
-* [replace-word](https://www.npmjs.com/package/replace-word)
 
 <!-- SELF HOSTING -->
 ## Self Hosting
