@@ -7,7 +7,7 @@
     <img src="icon.png" alt="Icon" width="80" height="80">
   </a>
 
-  <h3 align="center">Uwuifier</h3>
+  <h3 align="center">UwUifier</h3>
   <img src='https://img.shields.io/github/license/artificialbutter/UwuifierBot?style=flat-square'>
   <img src='https://img.shields.io/github/commit-activity/m/artificialbutter/UwuifierBot?style=flat-square'>
   
@@ -17,8 +17,6 @@
     <a href="https://github.com/artificialbutter/UwuifierBot/issues">Report Bug</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -36,8 +34,6 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About
 
@@ -47,15 +43,6 @@ You can uwuify text, turn it into a emojipasta, or even convert it to morse code
 <img src="screenshot.png"
          alt="Screenshot">
 
-
-The bot uses Discord Slash Commands, so you can find the command list in your discord client. (See Discord's <a href="https://support.discord.com/hc/en-us/articles/1500000368501-Slash-Commands-FAQ">Slash Command FAQ</a> for more info)
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 ### Built With
 
 * [discord.js](https://discord.js.org/)
@@ -63,26 +50,13 @@ The bot uses Discord Slash Commands, so you can find the command list in your di
 * [uwuifier](https://www.npmjs.com/package/@patarapolw/uwuifier)
 * [replace-word](https://www.npmjs.com/package/replace-word)
 
-
-
 <!-- SELF HOSTING -->
 ## Self Hosting
+
 ### Docker (Recommended)
-1. Install <a href="https://docs.docker.com/get-docker/">Docker </a> 
+
+1. Install <a href="https://docs.docker.com/get-docker/">Docker </a>
 2. Run `docker run --env=DISCORD_CLIENT_ID=BOTID --env=DISCORD_CLIENT_TOKEN=BOTTOKEN --env=DISCORD_CLIENT_PUBKEY=BOTPUBLICKEY -d ghcr.io/artificialbutter/uwuifierbot` <br>(replacing BOTID, BOTTOKEN, and BOTPUBLICKEY with your bot's info)
-### Manual
-Requirements:
-* [Node.js](https://nodejs.org/en/) LTS
-* [pnpm](https://pnpm.io/)
-* git
-
-Steps:
-1. Clone the repo with `git clone https://github.com/artificialbutter/UwuifierBot.git`
-2. Install required packages with `bun install` 
-3. Start the bot with `bun index.js`
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -91,14 +65,8 @@ Contributions are what make the open source community such an amazing place to l
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the GNU General Public License. See `LICENSE` for more information.
-
-
 <p align="right">(<a href="#top">back to top</a>)</p>
