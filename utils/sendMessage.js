@@ -11,10 +11,12 @@ function sendMessage(uwuifiedtext, ctx) {
             let uwuifiedbuffer = Buffer.from(uwuifiedtext);
 
             ctx.sendFollowUp({
-                content: "", file: {
-                    name: 'uwuify-' + snowflakeid + '.txt',
-                    file: uwuifiedbuffer
-                }
+                files: [
+                    {
+                        name: 'uwuify-' + snowflakeid + '.txt',
+                        file: uwuifiedbuffer
+                    }
+                ]
             });
             return;
         } // :3
