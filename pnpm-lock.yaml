@@ -16,7 +16,7 @@ dependencies:
     version: 16.4.5
   slash-create:
     specifier: ^6.0.1
-    version: 6.0.1
+    version: 6.0.2
   snowflake-codon:
     specifier: ^4.1.1
     version: 4.1.1
@@ -192,8 +192,8 @@ packages:
     resolution: {integrity: sha512-lyWpfvNGVb5lu8YUAbER0+UMBTdR63w2mcSUlhhBTyVbxJvjgqwyAf3AZD6MprgK0uHuBoWXSDAMWLupX83o3Q==}
     dev: false
 
-  /slash-create@6.0.1:
-    resolution: {integrity: sha512-2KZc2WLMNLGzKlEX/uQN47qtL/TUKfl3Vd2/EPJEqYHXHWABeyYfrtelWZwjGJevYNYKNnVoHkQ87g6pwRRQ/A==}
+  /slash-create@6.0.2:
+    resolution: {integrity: sha512-V2gqs7Ov3C8hjS2aODwzGUM/4WqpRiNXSPh69Bk3soyL7Kvkc/75HfwOgz9fTNNU+H/u5EMtvjR4hJgey0HKHA==}
     engines: {node: '>=16'}
     peerDependencies:
       express: ^4
@@ -207,7 +207,7 @@ packages:
       eventemitter3: 5.0.1
       lodash.isequal: 4.5.0
       tweetnacl: 1.0.3
-      undici: 5.27.2
+      undici: 5.28.3
     dev: false
 
   /snowflake-codon@4.1.1:
@@ -230,8 +230,8 @@ packages:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: false
 
-  /undici@5.27.2:
-    resolution: {integrity: sha512-iS857PdOEy/y3wlM3yRp+6SNQQ6xU0mmZcwRSriqk+et/cwWAtwmIGf6WkoDN2EK/AMdCO/dfXzIwi+rFMrjjQ==}
+  /undici@5.28.3:
+    resolution: {integrity: sha512-3ItfzbrhDlINjaP0duwnNsKpDQk3acHI3gVJ1z4fmwMK31k5G9OVIAMLSIaP6w4FaGkaAkN6zaQO9LUvZ1t7VA==}
     engines: {node: '>=14.0'}
     dependencies:
       '@fastify/busboy': 2.1.0
