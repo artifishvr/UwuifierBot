@@ -16,7 +16,7 @@ dependencies:
     version: 16.4.5
   slash-create:
     specifier: ^6.0.1
-    version: 6.0.2
+    version: 6.1.0
   snowflake-codon:
     specifier: ^4.1.1
     version: 4.1.1
@@ -91,8 +91,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@fastify/busboy@2.1.0:
-    resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
+  /@fastify/busboy@2.1.1:
+    resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
     dev: false
 
@@ -192,8 +192,8 @@ packages:
     resolution: {integrity: sha512-lyWpfvNGVb5lu8YUAbER0+UMBTdR63w2mcSUlhhBTyVbxJvjgqwyAf3AZD6MprgK0uHuBoWXSDAMWLupX83o3Q==}
     dev: false
 
-  /slash-create@6.0.2:
-    resolution: {integrity: sha512-V2gqs7Ov3C8hjS2aODwzGUM/4WqpRiNXSPh69Bk3soyL7Kvkc/75HfwOgz9fTNNU+H/u5EMtvjR4hJgey0HKHA==}
+  /slash-create@6.1.0:
+    resolution: {integrity: sha512-4ruvBOO5nlsOfJIWEl45whkIWrwNYo2qXl7nEChqpGxu/FmfJJA4BJFxcrxzkJPHCK+V+BFWfF8YugHo9pXsvw==}
     engines: {node: '>=16'}
     peerDependencies:
       express: ^4
@@ -207,7 +207,7 @@ packages:
       eventemitter3: 5.0.1
       lodash.isequal: 4.5.0
       tweetnacl: 1.0.3
-      undici: 5.28.3
+      undici: 5.28.2
     dev: false
 
   /snowflake-codon@4.1.1:
@@ -230,11 +230,18 @@ packages:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: false
 
-  /undici@5.28.3:
-    resolution: {integrity: sha512-3ItfzbrhDlINjaP0duwnNsKpDQk3acHI3gVJ1z4fmwMK31k5G9OVIAMLSIaP6w4FaGkaAkN6zaQO9LUvZ1t7VA==}
+  /undici@5.27.2:
+    resolution: {integrity: sha512-iS857PdOEy/y3wlM3yRp+6SNQQ6xU0mmZcwRSriqk+et/cwWAtwmIGf6WkoDN2EK/AMdCO/dfXzIwi+rFMrjjQ==}
     engines: {node: '>=14.0'}
     dependencies:
-      '@fastify/busboy': 2.1.0
+      '@fastify/busboy': 2.1.1
+    dev: false
+
+  /undici@5.28.2:
+    resolution: {integrity: sha512-wh1pHJHnUeQV5Xa8/kyQhO7WFa8M34l026L5P/+2TYiakvGy5Rdc8jWZVyG7ieht/0WgJLEd3kcU5gKx+6GC8w==}
+    engines: {node: '>=14.0'}
+    dependencies:
+      '@fastify/busboy': 2.1.1
     dev: false
 
   /ws@8.14.2:
