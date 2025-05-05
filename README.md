@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> This repository has not and will not be maintained with new updates. UwUifier's website and hosted bot will stay online indefinitely, or until it breaks.
+
+
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
